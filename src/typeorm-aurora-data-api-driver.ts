@@ -4,7 +4,7 @@ import { transformQueryAndParameters } from './transform.utils'
 
 export default class DataApiDriver {
   // Workaround for aws/aws-sdk-js#2914
-  private static async withRetry<T>(run: () => Promise<T>, ttl: number = 3): Promise<T> {
+  private static async withRetry<T>(run: () => Promise<T>, ttl: number = 5): Promise<T> {
     try {
       return await run()
     } catch (error) {
